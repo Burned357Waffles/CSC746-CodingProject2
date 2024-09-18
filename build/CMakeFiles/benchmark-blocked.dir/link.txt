@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/benchmark-blocked.dir/dgemm-blocked.cpp.o CMakeFiles/bench-blocked.dir/benchmark.cpp.o -o benchmark-blocked  /usr/lib/x86_64-linux-gnu/libblas.so 
