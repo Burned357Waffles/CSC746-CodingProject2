@@ -1,0 +1,320 @@
+blocked
+
+#####################################################
+run 1
+#####################################################
+Working on problem size N=64 
+Blocked DGEMM 
+Elapsed time is : 0.000676
+
+ Elapsed time is : 0.000170
+
+ Elapsed time is : 0.000181
+
+ Elapsed time is : 0.000207
+
+Working on problem size N=128 
+Blocked DGEMM 
+ Elapsed time is : 0.005349
+
+ Elapsed time is : 0.001378
+
+ Elapsed time is : 0.001411
+
+ Elapsed time is : 0.001543
+
+Working on problem size N=256 
+Blocked DGEMM 
+ Elapsed time is : 0.042829
+
+ Elapsed time is : 0.010973
+
+ Elapsed time is : 0.010740
+
+ Elapsed time is : 0.012887
+
+Working on problem size N=512 
+Blocked DGEMM 
+ Elapsed time is : 0.339934
+
+ Elapsed time is : 0.085967
+
+ Elapsed time is : 0.122323
+
+ Elapsed time is : 0.098155
+
+Working on problem size N=1024 
+Blocked DGEMM 
+ Elapsed time is : 2.750325
+
+ Elapsed time is : 0.707636
+
+ Elapsed time is : 0.689016
+
+ Elapsed time is : 0.829601
+
+Working on problem size N=2048 
+Blocked DGEMM 
+ Elapsed time is : 22.534270
+
+ Elapsed time is : 6.263482
+
+ Elapsed time is : 5.669580
+
+ Elapsed time is : 6.691170
+
+
+#####################################################
+run 2
+#####################################################
+Working on problem size N=64 
+Blocked DGEMM 
+ Elapsed time is : 0.000675
+
+ Elapsed time is : 0.000170
+
+ Elapsed time is : 0.000167
+
+ Elapsed time is : 0.000189
+
+Working on problem size N=128 
+Blocked DGEMM 
+ Elapsed time is : 0.005371
+
+ Elapsed time is : 0.001389
+
+ Elapsed time is : 0.001417
+
+ Elapsed time is : 0.001694
+
+Working on problem size N=256 
+Blocked DGEMM 
+ Elapsed time is : 0.042776
+
+ Elapsed time is : 0.010975
+
+ Elapsed time is : 0.012277
+
+ Elapsed time is : 0.012023
+
+Working on problem size N=512 
+Blocked DGEMM 
+ Elapsed time is : 0.340243
+
+ Elapsed time is : 0.085984
+
+ Elapsed time is : 0.093034
+
+ Elapsed time is : 0.102332
+
+Working on problem size N=1024 
+Blocked DGEMM 
+ Elapsed time is : 2.628428
+
+ Elapsed time is : 0.706787
+
+ Elapsed time is : 0.720975
+
+ Elapsed time is : 0.785914
+
+Working on problem size N=2048 
+Blocked DGEMM 
+ Elapsed time is : 21.238341
+
+ Elapsed time is : 6.233549
+
+ Elapsed time is : 5.914571
+
+ Elapsed time is : 6.336926
+
+
+#####################################################
+run 3
+#####################################################
+Working on problem size N=64 
+Blocked DGEMM 
+ Elapsed time is : 0.000677
+
+ Elapsed time is : 0.000170
+
+ Elapsed time is : 0.000178
+
+ Elapsed time is : 0.000195
+
+Working on problem size N=128 
+Blocked DGEMM 
+ Elapsed time is : 0.005368
+
+ Elapsed time is : 0.001384
+
+ Elapsed time is : 0.001357
+
+ Elapsed time is : 0.001555
+
+Working on problem size N=256 
+Blocked DGEMM 
+ Elapsed time is : 0.042837
+
+ Elapsed time is : 0.010757
+
+ Elapsed time is : 0.010622
+
+ Elapsed time is : 0.012701
+
+Working on problem size N=512 
+Blocked DGEMM 
+ Elapsed time is : 0.340813
+
+ Elapsed time is : 0.085971
+
+ Elapsed time is : 0.085215
+
+ Elapsed time is : 0.103127
+
+Working on problem size N=1024 
+Blocked DGEMM 
+ Elapsed time is : 2.743941
+
+ Elapsed time is : 0.706394
+
+ Elapsed time is : 0.689322
+
+ Elapsed time is : 0.812199
+
+Working on problem size N=2048 
+Blocked DGEMM 
+ Elapsed time is : 21.289516
+
+ Elapsed time is : 6.256006
+
+ Elapsed time is : 5.671037
+
+ Elapsed time is : 6.541686
+
+
+#####################################################
+run 4
+#####################################################
+Working on problem size N=64 
+Blocked DGEMM 
+ Elapsed time is : 0.000636
+
+ Elapsed time is : 0.000170
+
+ Elapsed time is : 0.000204
+
+ Elapsed time is : 0.000210
+
+Working on problem size N=128 
+Blocked DGEMM 
+ Elapsed time is : 0.005064
+
+ Elapsed time is : 0.001378
+
+ Elapsed time is : 0.001565
+
+ Elapsed time is : 0.001600
+
+Working on problem size N=256 
+Blocked DGEMM 
+ Elapsed time is : 0.040552
+
+ Elapsed time is : 0.011630
+
+ Elapsed time is : 0.011881
+
+ Elapsed time is : 0.012745
+
+Working on problem size N=512 
+Blocked DGEMM 
+ Elapsed time is : 0.319306
+
+ Elapsed time is : 0.085789
+
+ Elapsed time is : 0.085978
+
+ Elapsed time is : 0.101673
+
+Working on problem size N=1024 
+Blocked DGEMM 
+ Elapsed time is : 2.601500
+
+ Elapsed time is : 0.706384
+
+ Elapsed time is : 0.733288
+
+ Elapsed time is : 0.821073
+
+Working on problem size N=2048 
+Blocked DGEMM 
+ Elapsed time is : 21.281995
+
+ Elapsed time is : 6.248811
+
+ Elapsed time is : 6.039531
+
+ Elapsed time is : 6.612718
+
+
+#####################################################
+run 5
+#####################################################
+Working on problem size N=64 
+Blocked DGEMM 
+ Elapsed time is : 0.000637
+
+ Elapsed time is : 0.000169
+
+ Elapsed time is : 0.000172
+
+ Elapsed time is : 0.000200
+
+Working on problem size N=128 
+Blocked DGEMM 
+ Elapsed time is : 0.005024
+
+ Elapsed time is : 0.001370
+
+ Elapsed time is : 0.001514
+
+ Elapsed time is : 0.001671
+
+Working on problem size N=256 
+Blocked DGEMM 
+ Elapsed time is : 0.040609
+
+ Elapsed time is : 0.010936
+
+ Elapsed time is : 0.010795
+
+ Elapsed time is : 0.012729
+
+Working on problem size N=512 
+Blocked DGEMM 
+ Elapsed time is : 0.321753
+
+ Elapsed time is : 0.085826
+
+ Elapsed time is : 0.085735
+
+ Elapsed time is : 0.102672
+
+Working on problem size N=1024 
+Blocked DGEMM 
+ Elapsed time is : 2.596527
+
+ Elapsed time is : 0.705839
+
+ Elapsed time is : 0.823429
+
+ Elapsed time is : 0.828320
+
+Working on problem size N=2048 
+Blocked DGEMM 
+ Elapsed time is : 21.261419
+
+ Elapsed time is : 6.238441
+
+ Elapsed time is : 6.749141
+
+ Elapsed time is : 6.676537

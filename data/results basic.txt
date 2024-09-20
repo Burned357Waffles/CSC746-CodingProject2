@@ -1,0 +1,109 @@
+basic
+
+#####################################################
+run 1
+#####################################################
+Working on problem size N=64 
+ Elapsed time is : 0.000158 
+
+Working on problem size N=128 
+ Elapsed time is : 0.002758
+
+Working on problem size N=256 
+ Elapsed time is : 0.036165
+
+Working on problem size N=512 
+ Elapsed time is : 0.503194
+
+Working on problem size N=1024 
+ Elapsed time is : 5.188557
+
+Working on problem size N=2048 
+ Elapsed time is : 62.553446
+
+#####################################################
+run 2
+#####################################################
+Working on problem size N=64 
+ Elapsed time is : 0.000160
+
+Working on problem size N=128 
+ Elapsed time is : 0.002769
+
+Working on problem size N=256 
+ Elapsed time is : 0.036397
+
+Working on problem size N=512 
+ Elapsed time is : 0.498956
+
+Working on problem size N=1024 
+ Elapsed time is : 5.203430
+
+Working on problem size N=2048 
+ Elapsed time is : 61.776412
+
+
+#####################################################
+run 3
+#####################################################
+Working on problem size N=64 
+ Elapsed time is : 0.000168
+
+Working on problem size N=128 
+ Elapsed time is : 0.002678
+
+Working on problem size N=256 
+ Elapsed time is : 0.035806
+
+Working on problem size N=512 
+ Elapsed time is : 0.520785
+
+Working on problem size N=1024 
+ Elapsed time is : 5.357762
+
+Working on problem size N=2048 
+ Elapsed time is : 62.508268
+
+
+#####################################################
+run 4
+#####################################################
+Working on problem size N=64 
+ Elapsed time is : 0.000169
+
+Working on problem size N=128 
+ Elapsed time is : 0.002733
+
+Working on problem size N=256 
+ Elapsed time is : 0.036005
+
+Working on problem size N=512 
+ Elapsed time is : 0.505963
+
+Working on problem size N=1024 
+ Elapsed time is : 5.195061
+
+Working on problem size N=2048 
+ Elapsed time is : 62.328213
+
+
+#####################################################
+run 5
+#####################################################
+Working on problem size N=64 
+ Elapsed time is : 0.000162
+
+Working on problem size N=128 
+ Elapsed time is : 0.002749
+
+Working on problem size N=256 
+ Elapsed time is : 0.035997
+
+Working on problem size N=512 
+ Elapsed time is : 0.496987
+
+Working on problem size N=1024 
+ Elapsed time is : 5.243460
+
+Working on problem size N=2048 
+ Elapsed time is : 62.897733
