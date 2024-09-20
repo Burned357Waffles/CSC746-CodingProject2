@@ -24,7 +24,7 @@ extern void square_dgemm_blocked(int, int, double*, double*, double*) ;
 extern const char* dgemm_desc;
 
 void reference_dgemm(int n, double alpha, double* A, double* B, double* C) {
-    cblas_dgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, n, n, n, alpha, A, n, B, n, 1., C, n);
+    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, n, n, n, alpha, A, n, B, n, 1., C, n);
 }
 
 void fill(double* p, int n) {
@@ -47,7 +47,6 @@ bool check_accuracy(double *A, double *Anot, int nvalues)
   return true;
 }
 
-
 /* The benchmarking program */
 int main(int argc, char** argv) 
 {
@@ -59,7 +58,7 @@ int main(int argc, char** argv)
     // "conditions" BLAS (eg, dll loading), so ignore the runtime from
     // the first problem size, and start using the timings from the 
     // second problem size and beyond.
-    std::vector<int> test_sizes{4, 64, 128, 256, 512, 1024, 2048};
+    std::vector<int> test_sizes{64, 64, 128, 256, 512, 1024, 2048};
     std::vector<int> block_sizes{2, 16, 32, 64};
 
     int n_problems = test_sizes.size();
@@ -105,6 +104,9 @@ int main(int argc, char** argv)
            // insert timer code here
 
            reference_dgemm(n, 1.0 , Acopy, Bcopy, Ccopy);
+
+           //print_m(n, C, "C");
+           //print_m(n, Ccopy, "Ccopy");
 
            // compare your C with that computed by BLAS
            if (check_accuracy(Ccopy, C, n*n) == false)
