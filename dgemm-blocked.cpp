@@ -33,20 +33,18 @@ square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C)
     {
         for(int j = 0; j < n; j += block_size)
         {   
-            // copy tile of C into cache
             for(int x = 0; x < block_size; x++)
-                    for(int y = 0; y < block_size; y++)
-                        tile_C[x * block_size + y] = C[(i + x) * n + (j + y)];
+                memcpy(tile_C + x * block_size, C + (i + x) * n + j, block_size * sizeof(double));
 
+            // copy tile of C into cache
             for(int k = 0; k < n; k += block_size)
             {
                 // copy tile of A and B into cache                
                 for(int x = 0; x < block_size; x++)
-                    for(int y = 0; y < block_size; y++)
-                    {
-                        tile_A[x * block_size + y] = A[(i + x) * n + (k + y)];
-                        tile_B[x * block_size + y] = B[(k + x) * n + (j + y)];
-                    }
+                {
+                    memcpy(tile_A + x * block_size, A + (i + x) * n + k, block_size * sizeof(double));
+                    memcpy(tile_B + x * block_size, B + (k + x) * n + j, block_size * sizeof(double));
+                }
 
                 // perform basic matrix multiplication
                 basic_mm(block_size, tile_A, tile_B, tile_C);
@@ -54,8 +52,7 @@ square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C)
             
             // copy tile of C back into C
             for(int x = 0; x < block_size; x++)
-                for(int y = 0; y < block_size; y++)
-                    C[(i + x) * n + (j + y)] = tile_C[x * block_size + y];
+                memcpy(C + (i + x) * n + j, tile_C + x * block_size, block_size * sizeof(double));
         }
     }
 }
