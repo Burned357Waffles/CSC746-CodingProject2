@@ -20,11 +20,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def compute_MFLOPs(data, ops):
+def compute_MFLOPs(data, coef, exp):
     
     for i, n in enumerate(problem_sizes):
-        print("i =", i, "n =", n, "data[i] =", data[i])
-        data[i] = (ops * n**2) / (data[i] / 1000)
+        total_ops = coef * (n ** exp)
+        mflops = (total_ops / 1000000) / (data[i] / 1000)
+        print("mflops = ", mflops)
+        data[i] = mflops
 
     return data
 
@@ -54,12 +56,12 @@ xlocs = [i for i in range(len(problem_sizes))]
 
 plt.xticks(xlocs, problem_sizes)
 
-code1_MFLOPS = compute_MFLOPs(code1_time, 8)
-code2_MFLOPS = compute_MFLOPs(code2_time, 42)
-code3_MFLOPS = compute_MFLOPs(code3_time, 42)
-code4_MFLOPS = compute_MFLOPs(code4_time, 42)
-code5_MFLOPS = compute_MFLOPs(code5_time, 42)
-code6_MFLOPS = compute_MFLOPs(code6_time, 0)
+code1_MFLOPS = compute_MFLOPs(code1_time, 2, 3)
+code2_MFLOPS = compute_MFLOPs(code2_time, 2, 3)
+code3_MFLOPS = compute_MFLOPs(code3_time, 2, 3)
+code4_MFLOPS = compute_MFLOPs(code4_time, 2, 3)
+code5_MFLOPS = compute_MFLOPs(code5_time, 2, 3)
+code6_MFLOPS = compute_MFLOPs(code6_time, 2, 3)
 
 plt.plot(code1_MFLOPS, "r-o")
 plt.plot(code2_MFLOPS, "y-x")
