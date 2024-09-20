@@ -6,7 +6,7 @@ const char* dgemm_desc = "Blocked dgemm.";
 /* This routine performs a dgemm operation
  *  C := C + A * B
  * where A, B, and C are n-by-n matrices stored in row-major format.
- * The block_size-by-block_size is the size of the blocks that A and B are divided into.
+ * The block_size-by-block_size is the size of the tiles that A, B, C are divided into.
  * On exit, A and B maintain their input values. */
 
 void 
@@ -53,9 +53,9 @@ square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C)
             }
             
             // copy tile of C back into C
-            for(int ii = 0; ii < block_size; ii++)
-                for(int jj = 0; jj < block_size; jj++)
-                    C[(i + ii) * n + (j + jj)] = tile_C[ii * block_size + jj];
+            for(int x = 0; x < block_size; x++)
+                for(int y = 0; y < block_size; y++)
+                    C[(i + x) * n + (j + y)] = tile_C[x * block_size + y];
         }
     }
 }
