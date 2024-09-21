@@ -42,3 +42,13 @@ target_compile_options(benchmark-blocked PRIVATE -Wall -pedantic -march=native)
 set(BENCHMARK "blocked")
 configure_file(job.in job-${BENCHMARK})
 
+add_executable(benchmark-blocked-functions dgemm-blocked-functions.cpp)
+add_library(bench-blocked-functions OBJECT benchmark.cpp)
+target_compile_definitions(bench-blocked-functions PRIVATE -DBLOCKED)
+target_compile_features(bench-blocked-functions PRIVATE cxx_std_11)
+target_link_libraries(benchmark-blocked-functions PRIVATE bench-blocked-functions ${BLAS_LIBRARIES})
+target_compile_features(benchmark-blocked-functions PRIVATE c_std_11 c_restrict)
+target_compile_options(benchmark-blocked-functions PRIVATE -Wall -pedantic -march=native)
+set(BENCHMARK "blocked")
+configure_file(job.in job-${BENCHMARK})
+

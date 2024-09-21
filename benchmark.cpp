@@ -10,6 +10,7 @@
 #include <chrono>
 #include <iomanip>
 #include <iostream>
+#include <fstream>
 #include <random>
 #include <vector>
 
@@ -107,6 +108,15 @@ int main(int argc, char** argv)
            std::chrono::duration<double> elapsed = end_time - start_time;
 
            std::cout << " Elapsed time is : " << elapsed.count() << std::endl;
+           // write elapsed time to file
+           std::ofstream outfile("../data/elapsed_time.txt", std::ios::app);
+           if (outfile.is_open()) 
+           {
+              outfile << elapsed.count() << std::endl;
+              outfile.close();
+           } 
+           else
+              std::cerr << "Unable to open file for writing elapsed time." << std::endl;
 
            reference_dgemm(n, 1.0 , Acopy, Bcopy, Ccopy);
 

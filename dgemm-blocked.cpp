@@ -10,18 +10,6 @@ const char* dgemm_desc = "Blocked dgemm.";
  * On exit, A and B maintain their input values. */
 
 void 
-basic_mm(int n, double* A, double* B, double* C) 
-{
-    // each row of C
-    for(int i = 0; i < n; i++)
-        // each column of C
-        for(int j = 0; j < n; j++)
-            // DP each row of A and column of B into C
-            for(int k = 0; k < n; k++)
-                C[i*n + j] += A[i*n + k] * B[k*n + j];
-}
-
-void 
 square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C) 
 {   
     std::vector<double> buf(3 * block_size * block_size);
@@ -33,21 +21,27 @@ square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C)
     {
         for(int j = 0; j < n; j += block_size)
         {   
+            // copy tile of C into cache
             for(int x = 0; x < block_size; x++)
                 memcpy(tile_C + x * block_size, C + (i + x) * n + j, block_size * sizeof(double));
 
-            // copy tile of C into cache
             for(int k = 0; k < n; k += block_size)
             {
-                // copy tile of A and B into cache                
+                // copy tile of A and B into cache              
                 for(int x = 0; x < block_size; x++)
-                {
+                {    
                     memcpy(tile_A + x * block_size, A + (i + x) * n + k, block_size * sizeof(double));
                     memcpy(tile_B + x * block_size, B + (k + x) * n + j, block_size * sizeof(double));
                 }
-
+                
                 // perform basic matrix multiplication
-                basic_mm(block_size, tile_A, tile_B, tile_C);
+                // each row of C
+                for(int x = 0; x < block_size; x++)
+                    // each column of C
+                    for(int y = 0; y < block_size; y++)
+                        // DP each row of A and column of B into C
+                        for(int z = 0; z < block_size; z++)
+                            tile_C[x*block_size + y] += tile_A[x*block_size + z] * tile_B[z*block_size + y];
             }
             
             // copy tile of C back into C
