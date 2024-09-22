@@ -59,7 +59,7 @@ int main(int argc, char** argv)
     // "conditions" BLAS (eg, dll loading), so ignore the runtime from
     // the first problem size, and start using the timings from the 
     // second problem size and beyond.
-    std::vector<int> test_sizes{64, 128, 256, 512, 1024, 2048};
+    std::vector<int> test_sizes{64, 64, 128, 256, 512, 1024, 2048};
     std::vector<int> block_sizes{2, 16, 32, 64};
 
     int n_problems = test_sizes.size();
