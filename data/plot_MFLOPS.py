@@ -25,7 +25,7 @@ def compute_MFLOPs(data, coef, exp):
     for i, n in enumerate(problem_sizes):
         total_ops = coef * (n ** exp)
         mflops = (total_ops / 1000000) / (data[i] / 1000)
-        print("mflops = ", mflops)
+        #print("mflops = ", mflops)
         data[i] = mflops
 
     return data
@@ -50,7 +50,7 @@ code4_time = df[var_names[4]].values.tolist()
 code5_time = df[var_names[5]].values.tolist()
 code6_time = df[var_names[6]].values.tolist()
 
-plt.title("Comparison of MFLOPS/s")
+plt.title("Comparison of MFLOPS/s Between BMMCO and BLAS")
 
 xlocs = [i for i in range(len(problem_sizes))]
 
@@ -63,7 +63,7 @@ code4_MFLOPS = compute_MFLOPs(code4_time, 2, 3)
 code5_MFLOPS = compute_MFLOPs(code5_time, 2, 3)
 code6_MFLOPS = compute_MFLOPs(code6_time, 2, 3)
 
-plt.plot(code1_MFLOPS, "r-o")
+#plt.plot(code1_MFLOPS, "r-o")
 plt.plot(code2_MFLOPS, "y-x")
 plt.plot(code3_MFLOPS, "c-^")
 plt.plot(code4_MFLOPS, "g-.")
@@ -76,7 +76,9 @@ plt.plot(code6_MFLOPS, "m-D")
 plt.xlabel("Problem Sizes")
 plt.ylabel("MFLOPS/s")
 
-varNames = [var_names[1], var_names[2], var_names[3], var_names[4], var_names[5], var_names[6]]
+#varNames = [var_names[1], var_names[2], var_names[3], var_names[4], var_names[5], var_names[6]]
+varNames = [var_names[2], var_names[3], var_names[4], var_names[5], var_names[6]]
+#varNames = [var_names[1], var_names[6]]
 plt.legend(varNames, loc="best")
 
 plt.grid(axis='both')
