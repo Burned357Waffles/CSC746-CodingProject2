@@ -7,7 +7,10 @@ const char* dgemm_desc = "Blocked dgemm.";
  *  C := C + A * B
  * where A, B, and C are n-by-n matrices stored in row-major format.
  * The block_size-by-block_size is the size of the tiles that A, B, C are divided into.
- * On exit, A and B maintain their input values. */
+ * On exit, A and B maintain their input values.
+ * This function uses other function calls within for better code organization. 
+ * I wanted to test if using funcitons would impact the performance in any way
+ */
 
 void 
 basic_mm(int n, double* A, double* B, double* C) 
